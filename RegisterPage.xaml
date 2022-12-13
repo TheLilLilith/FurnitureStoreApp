@@ -1,0 +1,49 @@
+﻿<Page x:Class="FurnitureStoreApp.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FurnitureStoreApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="350"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="RegisterPage">
+
+    <Grid>
+        <StackPanel>
+            <Label Content="Регистрация" Foreground="Black"  FontFamily="Open Sans Bold" FontSize="25" HorizontalAlignment="Center" Margin="0,10,0,0" FontWeight="Bold" ></Label>
+            <WrapPanel>
+                <TextBox x:Name="LogTextBox" Margin="10,0,0,0" Width="160" materialDesign:HintAssist.Hint="Логин" 
+                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <PasswordBox Margin="10,0,0,0" Width="160" Name="PassTextBox"
+                 Style="{StaticResource MaterialDesignFilledRevealPasswordBox}"
+                 IsEnabled="{Binding IsChecked, ElementName=RevealPasswordOutlinedEnabled}"
+                 materialDesign:HintAssist.Hint="Пароль"
+                 materialDesign:TextFieldAssist.HasClearButton="True" />
+            </WrapPanel>
+            <WrapPanel Margin="0,10,0,0">
+                <TextBox x:Name="NameTextBox" Margin="10,0,0,0" Width="160" materialDesign:HintAssist.Hint="Имя" 
+                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="SurTextBox" Margin="10,0,0,0" Width="160" materialDesign:HintAssist.Hint="Фамилия" 
+                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            </WrapPanel>
+            <WrapPanel Margin="0,10,0,0">
+                <TextBox x:Name="PatronymicTextBox" Margin="10,0,0,0" Width="160" materialDesign:HintAssist.Hint="Отчество" 
+                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox Name="HideCheckBox" Content="Отсутствует" Margin="10,0,0,0"  Click="HideCheckBox_Click"></CheckBox>
+            </WrapPanel>
+            <WrapPanel Margin="0,10,0,0">
+                <TextBox x:Name="PhoneTextBox" Margin="10,0,0,0" Width="160" materialDesign:HintAssist.Hint="Номер телефона" 
+                     Style="{StaticResource MaterialDesignFilledTextBox}"
+                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker x:Name="BirthDate" Margin="10,0,0,0" Width="160" materialDesign:HintAssist.HelperText="Дата рождения"></DatePicker>
+            </WrapPanel>
+            <TextBox Name="AdressTextBox" TextWrapping="Wrap" Margin="10,10,10,0" VerticalAlignment="Stretch" MinWidth="280" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" materialDesign:HintAssist.Hint="Адрес" Height="80"/>
+            <Button Style="{StaticResource MaterialDesignRaisedButton}" Content="Зарегистрироваться"  Name="RegisterButton" Click="RegisterButton_Click"  Margin="0,10,0,0" Width="200" Foreground="White" />
+        </StackPanel>
+    </Grid>
+</Page>
